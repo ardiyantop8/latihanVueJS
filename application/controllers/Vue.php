@@ -7,4 +7,9 @@ class Vue extends CI_Controller
     {
         $this->load->view('latihanVue');
     }
+
+    public function instance_object()
+    {
+        $this->load->view('VueDasar/instance_object');
+    }
 }
