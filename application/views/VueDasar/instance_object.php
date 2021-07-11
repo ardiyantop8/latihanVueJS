@@ -27,6 +27,17 @@
     </div>
     <!-- Tutup directive -->
 
+
+    <!-- looping / v-for -->
+    <div id="app-loop">
+        <ul>
+            <li v-for="(keys, member) in members">
+                {{member}} saya {{keys}}
+            </li>
+        </ul>
+    </div>
+    <!-- tutup looping / v-for -->
+
     <script src="<?= base_url('assets/js/'); ?>vue.js"></script>
     <script>
         var pribadi = {
@@ -34,6 +45,14 @@
             umur: 30,
             kelamin: "Laki-laki",
             done: false
+        }
+
+        var dataVfor = {
+            members: {
+                nama: "Ardiyanto Putra",
+                umur: 37,
+                gender: "Laki-laki"
+            }
         }
 
         const vm = new Vue({
@@ -49,6 +68,11 @@
         const Directive = new Vue({
             el: '#app-directive',
             data: pribadi,
+        });
+
+        const Vfor = new Vue({
+            el: '#app-loop',
+            data: dataVfor
         });
     </script>
 </body>
