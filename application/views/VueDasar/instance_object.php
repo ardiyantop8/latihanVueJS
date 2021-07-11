@@ -13,14 +13,27 @@
         <p>Nama Saya : {{nama}} </p>
         <p>Umur Saya : {{umur}} Tahun</p>
         <p>Umur anak saya: {{umurAnak1}} Tahun</p>
+    </div><br><br>
+
+
+    <!-- directive : if ,else, loop -->
+    <div id="app-directive">
+        <div v-if="done">
+            <p>Nama Saya : {{nama}} </p>
+        </div>
+        <div v-else>
+            <p><b>Maaf variable donenya = false</b></p>
+        </div>
     </div>
+    <!-- Tutup directive -->
 
     <script src="<?= base_url('assets/js/'); ?>vue.js"></script>
     <script>
         var pribadi = {
             nama: "Ardiyanto Putra",
             umur: 30,
-            kelamin: "Laki-laki"
+            kelamin: "Laki-laki",
+            done: false
         }
 
         const vm = new Vue({
@@ -31,6 +44,11 @@
                     return this.umur - 28;
                 }
             }
+        });
+
+        const Directive = new Vue({
+            el: '#app-directive',
+            data: pribadi,
         });
     </script>
 </body>
